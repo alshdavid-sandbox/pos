@@ -1,0 +1,30 @@
+<app-checkout-panel
+    [checkoutTotal]="checkoutTotal"
+    (onClear)="clearCheckout()"
+    (onCharge)="chargeCheckout()">
+    <div 
+        class="no-items-in-cart"
+        *ngIf="!checkoutTotal">
+        No Items In Cart!
+    </div>
+    <app-checkout-item
+        *ngFor="let item of checkout | objectTransform"
+        [id]="item.id"
+        [title]="item.title"
+        [qty]="item.qty"
+        [price]="item.price"
+        (onRemove)="removeItemFromCheckout($event)">
+    </app-checkout-item>
+</app-checkout-panel>
+
+<main>
+    <nav>
+        <input type="text" required placeholder="Search">
+    </nav>
+    <app-shop-item
+        *ngFor="let item of items"
+        [image]="item.img"
+        [title]="item.title"
+        (click)="addItemToCheckout(item)">
+    </app-shop-item>
+</main>

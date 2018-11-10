@@ -1,0 +1,9 @@
+<div class="trash" (click)="onRemove.emit(id)">
+    <app-icon src="times"></app-icon>
+</div>
+<p>{{ title }}</p>
+<div>
+    <span (click)="onQty.emit(id)">{{ qty }}</span>
+    <span>{{ price | currency }}</span>
+    <span>{{ price * qty | currency  }}</span>                      
+</div>

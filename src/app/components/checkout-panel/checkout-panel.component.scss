@@ -1,0 +1,84 @@
+@import "../../../scss/variables";
+
+:host {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    width: $checkout-size;
+    background-color: #fafafa;
+    box-shadow: $shadow-level-3;
+
+    @media print {
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .clear,
+    .charge {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: $color-4;
+        position: absolute;
+        left: 0;
+        right: 0;
+        letter-spacing: 1px;
+    }
+
+    .clear {
+        background-color: $color-4;
+        font-size: $font-size-l;
+        height: 50px;
+        bottom: 100px;
+        color: #333;
+        transition: opacity .2s ease-out, visibility .2s;
+
+        &.disabled {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        @media print {
+            display: none
+        }
+    }
+    
+    .charge {
+        background-color: $color-3;
+        font-size: $font-size-xxl;
+        height: 100px;
+        bottom: 0;
+        color: white;
+
+        @media print {
+            position: static;
+            text-align: right;
+            display: block;
+            color: black;
+            background-color: transparent;
+            padding-top: 30px;
+        }
+
+        &:before {
+            content: 'CHARGE';
+            display: block;
+            font-size: $font-size-m;
+            margin-bottom: $spacing-level-1;
+
+            @media print {
+                content: 'TOTAL';
+                display: inline-block;
+                vertical-align: middle;
+                
+            }
+        }
+
+        &.disabled {
+            opacity: 0.8;
+        }
+    }
+}

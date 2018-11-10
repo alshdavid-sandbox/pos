@@ -1,0 +1,40 @@
+@import '../scss/variables';
+
+.no-items-in-cart {
+    text-align: center;
+    line-height: 80px;
+    opacity: 0.4;
+    font-size: $font-size-m;
+}
+
+main {
+    margin: 0 $checkout-size $spacing-level-13 0;
+    padding: 0 40px;
+    font-size: 0;
+
+    @media print {
+        display: none
+    }
+}
+
+nav {
+    margin: 0 10px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    
+    input {
+        line-height: 40px;
+        padding: 0 20px;
+        width: 100px;
+        border-radius: 40px;
+        border: #e0e0e0 1px solid;
+        transition: width .25s ease-out, border .25s ease-out;
+
+        &:focus,
+        &:valid {
+            width: 100%;
+            border: #333 solid 1px;
+        }
+    }
+}

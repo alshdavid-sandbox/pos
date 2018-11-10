@@ -1,0 +1,14 @@
+<app-checkout-item-heading></app-checkout-item-heading>
+<ng-content></ng-content>
+<div 
+    [class.disabled]="!checkoutTotal"
+    class="clear" 
+    (click)="checkoutTotal && onClear.emit()">
+    CLEAR
+</div>
+<div 
+    class="charge" 
+    [class.disabled]="!checkoutTotal"
+    (click)="checkoutTotal && onCharge.emit()">
+    {{ checkoutTotal | currency }}
+</div>

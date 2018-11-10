@@ -1,0 +1,26 @@
+@import "../../../scss/variables";
+
+:host {
+    display: inline-block;
+    padding: 20px 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    user-select: none;
+    transition: .10s opacity;
+    background-color: white;
+    color: black;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &.primary {
+        background-color: $color-3;
+        color: white;
+    }
+
+    &.secondary {
+        background-color: $color-4;
+        color: black;
+    }
+}

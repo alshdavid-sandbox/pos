@@ -1,0 +1,53 @@
+@import "../../../scss/variables";
+
+:host {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    border-bottom: #666 1px solid;
+    line-height: 40px;
+    padding: 0 10px;
+    font-size: $font-size-s;
+
+    &[heading] {
+        background-color: $color-2;
+        color: white;
+        border: none;
+    }
+}
+
+.trash {
+    position: absolute;
+    right: 100%;
+    top: 4px;
+    bottom: 4px;
+    width: 26px;
+    background-color: #DB4437;
+    color: white;
+    z-index: -1;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size-m;
+    border-radius: 4px 0 0 4px;
+
+    @media print {
+        display: none;
+    }
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+        display: inline-block;
+        width: 60px;
+        text-align: center;
+
+        &:first-child {
+            width: 30px;
+        }
+    }
+}

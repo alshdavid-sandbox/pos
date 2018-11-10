@@ -1,0 +1,6 @@
+export * from './icon/icon.component'
+export * from './button/button.component'
+export * from './checkout-item/checkout-item.component'
+export * from './checkout-item-heading/checkout-item-heading.component'
+export * from './checkout-panel/checkout-panel.component'
+export * from './shop-item/shop-item.component'

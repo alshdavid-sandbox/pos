@@ -1,0 +1,37 @@
+[
+    {
+        "id": "poster_1",
+        "title": "Wall Poster",
+        "description": "one",
+        "img": "/assets/items/poster_1.jpg",
+        "price": 10.43
+    },
+    {
+        "id": "blueray",
+        "title": "Blueray",
+        "description": "two",
+        "img": "/assets/items/blueray.jpg",
+        "price": 15.99
+    },
+    {
+        "id": "quentin_tarantino",
+        "title": "Quentin Tarantino",
+        "description": "three",
+        "img": "/assets/items/quentin_tarantino.jpg",
+        "price": 18.25
+    },
+    {
+        "id": "poster_2",
+        "title": "Wall Poster 2",
+        "description": "four",
+        "img": "/assets/items/poster_2.jpg",
+        "price": 22.00
+    },
+    {
+        "id": "shirt",
+        "title": "Shirt",
+        "description": "five",
+        "img": "/assets/items/shirt.jpg",
+        "price": 13.00
+    }
+]

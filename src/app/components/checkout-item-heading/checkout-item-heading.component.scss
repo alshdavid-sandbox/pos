@@ -1,0 +1,27 @@
+@import "../../../scss/variables";
+
+:host {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    line-height: 40px;
+    padding: 0 10px;
+    font-size: $font-size-s;
+    background-color: $color-2;
+    color: white;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+        display: inline-block;
+        width: 60px;
+        text-align: center;
+
+        &:first-child {
+            width: 30px;
+        }
+    }
+}
