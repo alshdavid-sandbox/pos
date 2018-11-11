@@ -24,16 +24,22 @@ nav {
     align-items: center;
     
     input {
+        position: fixed;
+        z-index: 99;
+        top: 23px;
+        left: 50px;
         line-height: 40px;
         padding: 0 20px;
         width: 100px;
         border-radius: 40px;
         border: #e0e0e0 1px solid;
-        transition: width .25s ease-out, border .25s ease-out;
+        transition: width .25s ease-out, border .25s ease-out, opacity .25s ease-out;
+        opacity: 0.5;
 
         &:focus,
         &:valid {
-            width: 100%;
+            opacity: 1;;
+            width: calc(100% - #{$checkout-size + 100px});
             border: #333 solid 1px;
         }
     }

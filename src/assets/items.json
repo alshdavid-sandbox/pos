@@ -2,36 +2,193 @@
     {
         "id": "poster_1",
         "title": "Wall Poster",
-        "description": "one",
         "img": "/assets/items/poster_1.jpg",
         "price": 10.43
     },
     {
         "id": "blueray",
         "title": "Blueray",
-        "description": "two",
         "img": "/assets/items/blueray.jpg",
         "price": 15.99
     },
     {
         "id": "quentin_tarantino",
         "title": "Quentin Tarantino",
-        "description": "three",
         "img": "/assets/items/quentin_tarantino.jpg",
         "price": 18.25
     },
     {
         "id": "poster_2",
         "title": "Wall Poster 2",
-        "description": "four",
         "img": "/assets/items/poster_2.jpg",
         "price": 22.00
     },
     {
         "id": "shirt",
         "title": "Shirt",
-        "description": "five",
         "img": "/assets/items/shirt.jpg",
         "price": 13.00
+    },
+    {
+        "id": "shirt_2",
+        "title": "Shirt",
+        "img": "/assets/items/shirt_2.jpg",
+        "price": 17.00
+    },
+    {
+        "id": "shirt_3",
+        "title": "Shirt",
+        "img": "/assets/items/shirt_3.jpg",
+        "price": 22.00
+    },
+    {
+        "id": "hat",
+        "title": "Hat",
+        "img": "/assets/items/hat.jpg",
+        "price": 30.00
+    },
+    {
+        "id": "poster_3",
+        "title": "Poster",
+        "img": "/assets/items/poster_3.jpg",
+        "price": 55.99
+    },
+    {
+        "id": "dvd",
+        "title": "DVD",
+        "img": "/assets/items/dvd.jpg",
+        "price": 34.99
+    },
+    {
+        "id": "comic_1",
+        "title": "Comic",
+        "img": "/assets/items/comic_1.jpg",
+        "price": 0.99
+    },
+    {
+        "id": "toys_1",
+        "title": "Comic",
+        "img": "/assets/items/toys_1.jpg",
+        "price": 2.99
+    },
+    {
+        "id": "toy_2",
+        "title": "Comic",
+        "img": "/assets/items/toy_2.jpg",
+        "price": 2.99
+    },
+    {
+        "id": "toy_3",
+        "title": "Comic",
+        "img": "/assets/items/toy_3.jpg",
+        "price": 3.99
+    },
+    {
+        "id": "poster_4",
+        "title": "Comic",
+        "img": "/assets/items/poster_4.jpg",
+        "price": 12.99
+    },
+    {
+        "id": "poster_5",
+        "title": "Comic",
+        "img": "/assets/items/poster_5.jpg",
+        "price": 15.50
+    },
+    {
+        "id": "poster_11",
+        "title": "Wall Poster",
+        "img": "/assets/items/poster_1.jpg",
+        "price": 10.43
+    },
+    {
+        "id": "blueray1",
+        "title": "Blueray",
+        "img": "/assets/items/blueray.jpg",
+        "price": 15.99
+    },
+    {
+        "id": "quentin_tarantino1",
+        "title": "Quentin Tarantino",
+        "img": "/assets/items/quentin_tarantino.jpg",
+        "price": 18.25
+    },
+    {
+        "id": "poster_21",
+        "title": "Wall Poster 2",
+        "img": "/assets/items/poster_2.jpg",
+        "price": 22.00
+    },
+    {
+        "id": "shirt1",
+        "title": "Shirt",
+        "img": "/assets/items/shirt.jpg",
+        "price": 13.00
+    },
+    {
+        "id": "shirt_21",
+        "title": "Shirt",
+        "img": "/assets/items/shirt_2.jpg",
+        "price": 17.00
+    },
+    {
+        "id": "shirt_31",
+        "title": "Shirt",
+        "img": "/assets/items/shirt_3.jpg",
+        "price": 22.00
+    },
+    {
+        "id": "hat1",
+        "title": "Hat",
+        "img": "/assets/items/hat.jpg",
+        "price": 30.00
+    },
+    {
+        "id": "poster_31",
+        "title": "Poster",
+        "img": "/assets/items/poster_3.jpg",
+        "price": 55.99
+    },
+    {
+        "id": "dvd1",
+        "title": "DVD",
+        "img": "/assets/items/dvd.jpg",
+        "price": 34.99
+    },
+    {
+        "id": "comic_11",
+        "title": "Comic",
+        "img": "/assets/items/comic_1.jpg",
+        "price": 0.99
+    },
+    {
+        "id": "toys_11",
+        "title": "Comic",
+        "img": "/assets/items/toys_1.jpg",
+        "price": 2.99
+    },
+    {
+        "id": "toy_21",
+        "title": "Comic",
+        "img": "/assets/items/toy_2.jpg",
+        "price": 2.99
+    },
+    {
+        "id": "toy_31",
+        "title": "Comic",
+        "img": "/assets/items/toy_3.jpg",
+        "price": 3.99
+    },
+    {
+        "id": "poster_41",
+        "title": "Comic",
+        "img": "/assets/items/poster_4.jpg",
+        "price": 12.99
+    },
+    {
+        "id": "poster_51",
+        "title": "Comic",
+        "img": "/assets/items/poster_5.jpg",
+        "price": 15.50
     }
 ]

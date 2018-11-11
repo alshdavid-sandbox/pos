@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { TCheckout, IItem } from '~models'
+import { Store } from '@ngrx/store'
+import { Selector, IStore, TCheckout, IItem, ICheckoutItem } from '~models'
 import { ItemsService, CheckoutService, ChargeService } from '~services'
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,21 +10,45 @@ import { ItemsService, CheckoutService, ChargeService } from '~services'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public items: IItem[] = this.itemsService.getAll()
-  public checkout: TCheckout = this.checkoutService.getCheckout()
+  public subscriptions = new Subscription()
+  public items: IItem[] = []
+  public checkout: TCheckout = {}
 
   get checkoutTotal() {
-    return this.checkoutService.total
+    return Object
+      .values(this.checkout)
+      .reduce((p:number, c:ICheckoutItem) => p += (c.price * c.qty), 0)
   }
 
   constructor(
+    private store: Store<IStore>,
     private itemsService: ItemsService,
     private checkoutService: CheckoutService,
     private chargeService: ChargeService
   ) { }
 
-  addItemToCheckout(item: IItem, qty = 1) {
-    this.checkoutService.add(item, qty)
+  ngOnDestroy() {
+    this.subscriptions.unsubscribe()
+  }
+
+  ngOnInit() {
+    this.subscriptions.add(  
+      this.store
+        .select(Selector.products)
+        .subscribe(products => this.items = products))
+
+    this.subscriptions.add(  
+      this.store
+        .select(Selector.checkout)
+        .subscribe(checkout => this.checkout = checkout))
+  }
+
+  async ngAfterViewInit() {
+    await this.itemsService.getProducts()
+  }
+
+  addItemToCheckout(item: IItem) {
+    this.checkoutService.add(item)
   }
 
   removeItemFromCheckout(itemId: string) {

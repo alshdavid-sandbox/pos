@@ -21,7 +21,9 @@
       "~components": ["src/app/components"],
       "~models": ["src/app/models"],
       "~pipes": ["src/app/pipes"],
-      "~services": ["src/app/services"]
+      "~services": ["src/app/services"],
+      "~actions": ["src/app/actions"],
+      "~reducers": ["src/app/reducers"]
     }
   }
 }

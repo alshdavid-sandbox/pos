@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core'
 import { WebsocketService } from './websocket.service'
 import { CheckoutService } from './checkout.service'
 import { NoticeService } from './notice.service'
-import { Subscription } from 'rxjs';
 import { WebsocketEventType, WebsocketEvent } from '~models'
 
 @Injectable()
 export class ChargeService {
+    // Simple lock
     private isSending: boolean = false
    
     constructor(

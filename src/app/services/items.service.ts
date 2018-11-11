@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { IItem } from '~models'
+import { Store } from '@ngrx/store'
+import { IItem, StoreAction, IStore } from '~models'
+import { productsActionType } from '~reducers'
 
 @Injectable()
 export class ItemsService {
     private items: IItem[] = []
 
     constructor(
+        private store: Store<IStore>,
         private ngHttp: HttpClient
-    ){
-        this.ngHttp.get('/assets/items.json')
-            .subscribe((data:any) => {
-                data.forEach(item => this.items.push(item))
-            })
-    }
+    ){}
 
-    getAll(): IItem[] {
-        return this.items
+    async getProducts() {
+        const data = await this.ngHttp.get<IItem[]>('/assets/items.json').toPromise()
+        this.store.dispatch(new StoreAction<productsActionType>(productsActionType.set, data))
     }
 }
