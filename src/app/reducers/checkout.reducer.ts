@@ -1,4 +1,4 @@
-import { ICheckoutItem, TCheckout, IStoreAction, actionFunction, CheckoutItem, IItem } from '~models'
+import { ICheckoutItem, checkout, IStoreAction, actionFunction, CheckoutItem, IItem } from '~models'
 import { cloneDeep } from 'lodash'
 
 export enum checkoutActionType {
@@ -8,9 +8,9 @@ export enum checkoutActionType {
 }
 
 export function checkoutReducer(
-    state: TCheckout = {}, 
-    action: IStoreAction<checkoutActionType>): TCheckout {
-        const fn: actionFunction<TCheckout> = actions[action.type]
+    state: checkout = {}, 
+    action: IStoreAction<checkoutActionType>): checkout {
+        const fn: actionFunction<checkout> = actions[action.type]
         if (!fn) {
             return state
         }
@@ -18,7 +18,7 @@ export function checkoutReducer(
         return fn(newState, action.payload)
     }
 
-export const checkoutAddAction = (newState: TCheckout, payload: IItem) => {
+export const checkoutAddAction = (newState: checkout, payload: IItem) => {
     if (!newState[payload.id]) {
         newState[payload.id] = new CheckoutItem(
             payload.id, 
@@ -30,12 +30,12 @@ export const checkoutAddAction = (newState: TCheckout, payload: IItem) => {
     return newState
 }
 
-export const checkoutRemoveAction = (newState: TCheckout, payload: string) => {
+export const checkoutRemoveAction = (newState: checkout, payload: string) => {
     delete newState[payload]
     return newState
 }
 
-export const checkoutClearAction = (newState: TCheckout, payload: any) => {
+export const checkoutClearAction = (newState: checkout, payload: any) => {
     return {}
 }
 
