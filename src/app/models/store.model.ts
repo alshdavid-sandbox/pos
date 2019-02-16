@@ -1,5 +1,5 @@
 import { IItem } from "./item.model";
-import { TCheckout } from "./checkout-item.model";
+import { checkout } from "./checkout-item.model";
 
 export interface IStoreAction<T> {
     type: T,
@@ -30,5 +30,5 @@ export enum Selector {
 
 export interface IStore {
     products: IItem[],
-    checkout: TCheckout
+    checkout: checkout
 }

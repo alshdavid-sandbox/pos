@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store'
-import { Selector, IStore, TCheckout, IItem, ICheckoutItem } from '~models'
+import { Selector, IStore, checkout, IItem, ICheckoutItem } from '~models'
 import { ItemsService, CheckoutService, ChargeService } from '~services'
 import { Subscription } from 'rxjs';
 
@@ -12,13 +12,8 @@ import { Subscription } from 'rxjs';
 export class AppComponent {
   public subscriptions = new Subscription()
   public items: IItem[] = []
-  public checkout: TCheckout = {}
-
-  get checkoutTotal() {
-    return Object
-      .values(this.checkout)
-      .reduce((p:number, c:ICheckoutItem) => p += (c.price * c.qty), 0)
-  }
+  public checkout: checkout
+  public checkoutTotal: number
 
   constructor(
     private store: Store<IStore>,
@@ -31,19 +26,23 @@ export class AppComponent {
     this.subscriptions.unsubscribe()
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    
     this.subscriptions.add(  
       this.store
-        .select(Selector.products)
-        .subscribe(products => this.items = products))
-
+      .select(Selector.products)
+      .subscribe(products => this.items = products))
+      
     this.subscriptions.add(  
       this.store
-        .select(Selector.checkout)
-        .subscribe(checkout => this.checkout = checkout))
-  }
-
-  async ngAfterViewInit() {
+      .select(Selector.checkout)
+      .subscribe(checkout => {
+        this.checkout = checkout
+        this.checkoutTotal = Object
+          .values(this.checkout)
+          .reduce((p:number, c:ICheckoutItem) => p += (c.price * c.qty), 0)
+      }))
+    
     await this.itemsService.getProducts()
   }
 

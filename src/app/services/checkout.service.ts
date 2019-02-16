@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { Store } from '@ngrx/store'
-import { IItem, TCheckout, CheckoutItem, ICheckoutItem, IStore, StoreAction } from '~models'
+import { IItem, checkout, CheckoutItem, ICheckoutItem, IStore, StoreAction } from '~models'
 import { checkoutActionType } from '~reducers';
 
 @Injectable()

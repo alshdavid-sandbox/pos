@@ -1,4 +1,4 @@
-export type TCheckout = Record<string, ICheckoutItem>
+export type checkout = Record<string, ICheckoutItem>
 
 export interface ICheckoutItem {
     qty: number
