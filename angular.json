@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "assembly-payments-exam": {
+    "point-of-sale": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/assembly-payments-exam",
+            "outputPath": "dist/point-of-sale",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -61,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "assembly-payments-exam:build"
+            "browserTarget": "point-of-sale:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "assembly-payments-exam:build:production"
+              "browserTarget": "point-of-sale:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "assembly-payments-exam:build"
+            "browserTarget": "point-of-sale:build"
           }
         },
         "test": {
@@ -106,7 +106,7 @@
         }
       }
     },
-    "assembly-payments-exam-e2e": {
+    "point-of-sale-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +115,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "assembly-payments-exam:serve"
+            "devServerTarget": "point-of-sale:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "assembly-payments-exam:serve:production"
+              "devServerTarget": "point-of-sale:serve:production"
             }
           }
         },
@@ -135,5 +135,5 @@
       }
     }
   },
-  "defaultProject": "assembly-payments-exam"
+  "defaultProject": "point-of-sale"
 }

@@ -1,49 +1,38 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store'
-import { Selector, IStore, TCheckout, IItem, ICheckoutItem } from '~models'
+import { selector, checkout, IItem, ICheckoutItem } from '~models'
 import { ItemsService, CheckoutService, ChargeService } from '~services'
-import { Subscription } from 'rxjs';
+import { Select } from 'ngx-dux'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  public subscriptions = new Subscription()
-  public items: IItem[] = []
-  public checkout: TCheckout = {}
+export class AppComponent {  
 
-  get checkoutTotal() {
-    return Object
-      .values(this.checkout)
-      .reduce((p:number, c:ICheckoutItem) => p += (c.price * c.qty), 0)
+  @Select(selector.products)
+  public items: IItem[]
+
+  @Select(selector.checkout)
+  public set onCheckout(c: checkout) {
+    this.checkout = c
+    this.checkoutTotal = Object
+      .values(c)
+      .reduce<number>((p:number, c:ICheckoutItem) => p += (c.price * c.qty), 0)
   }
+  
+  public checkout: checkout
+  public checkoutTotal: number
 
   constructor(
-    private store: Store<IStore>,
     private itemsService: ItemsService,
     private checkoutService: CheckoutService,
     private chargeService: ChargeService
   ) { }
 
-  ngOnDestroy() {
-    this.subscriptions.unsubscribe()
-  }
+  ngOnDestroy() {}
 
-  ngOnInit() {
-    this.subscriptions.add(  
-      this.store
-        .select(Selector.products)
-        .subscribe(products => this.items = products))
-
-    this.subscriptions.add(  
-      this.store
-        .select(Selector.checkout)
-        .subscribe(checkout => this.checkout = checkout))
-  }
-
-  async ngAfterViewInit() {
+  async ngOnInit() {
     await this.itemsService.getProducts()
   }
 
